@@ -10,13 +10,13 @@ pub struct FileManager;
 impl FileManager {
     //TODO: return error?
     fn open(&self, uris: &[&str], _startup_id: &str) {
-        match process::Command::new("cosmic-files").args(uris).spawn() {
+        match process::Command::new("armyknife-files").args(uris).spawn() {
             Ok(mut child) => {
                 log::info!("spawned cosmic-files with id {:?}", child.id());
                 match child.wait() {
                     Ok(status) => {
                         if status.success() {
-                            log::info!("cosmic-files exited with {status}");
+                            log::info!("armyknife-files exited with {status}");
                         } else {
                             log::warn!("failed to run cosmic-files: exited with {status}");
                         }

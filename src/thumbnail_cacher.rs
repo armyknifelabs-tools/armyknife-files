@@ -47,7 +47,7 @@ impl ThumbnailCacher {
         let thumbnail_path = thumbnail_dir.join(&thumbnail_filename);
         let thumbnail_fail_marker_path = cache_base_dir
             .join("fail")
-            .join(format!("cosmic-files-{}", env!("CARGO_PKG_VERSION")))
+            .join(format!("armyknife-files-{}", env!("CARGO_PKG_VERSION")))
             .join(&thumbnail_filename);
 
         Ok(Self {
@@ -102,7 +102,7 @@ impl ThumbnailCacher {
 
     pub fn update_with_image(&self, image: DynamicImage) -> Result<&Path, Box<dyn Error>> {
         let temp_file = tempfile::Builder::new()
-            .prefix("cosmic-files-")
+            .prefix("armyknife-files-")
             .tempfile_in(&self.thumbnail_dir)?;
         {
             let file = File::create(temp_file.path())?;

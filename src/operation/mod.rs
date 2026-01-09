@@ -1326,7 +1326,7 @@ mod tests {
         let fs = empty_fs()?;
         let path = fs.path();
 
-        let base_name = "cosmic";
+        let base_name = "armyknife";
         let base_path = path.join(base_name);
         File::create(&base_path)?;
 
@@ -1396,7 +1396,7 @@ mod tests {
         let fs = empty_fs()?;
         let path = fs.path();
 
-        let dir_path = path.join("cosmic");
+        let dir_path = path.join("armyknife");
         fs::create_dir(&dir_path)?;
         let file_path = path.join("ferris");
         File::create(&file_path)?;

@@ -829,7 +829,7 @@ impl App {
                         let _ = recently_used_xbel::update_recently_used(
                             &path,
                             Self::APP_ID.to_string(),
-                            "cosmic-files".to_string(),
+                            "armyknife-files".to_string(),
                             None,
                         );
                     }
@@ -893,7 +893,7 @@ impl App {
                             let _ = recently_used_xbel::update_recently_used(
                                 &path.into(),
                                 Self::APP_ID.to_string(),
-                                "cosmic-files".to_string(),
+                                "armyknife-files".to_string(),
                                 None,
                             );
                         }
@@ -1619,8 +1619,8 @@ impl App {
 
     fn update_title(&mut self) -> Task<Message> {
         let window_title = match self.tab_model.text(self.tab_model.active()) {
-            Some(tab_title) => format!("{tab_title} — {}", fl!("cosmic-files")),
-            None => fl!("cosmic-files"),
+            Some(tab_title) => format!("{tab_title} — {}", fl!("armyknife-files")),
+            None => fl!("armyknife-files"),
         };
         if let Some(window_id) = self.core.main_window_id() {
             self.set_window_title(window_title, window_id)
@@ -2109,7 +2109,7 @@ impl Application for App {
     type Message = Message;
 
     /// The unique application ID to supply to the window manager.
-    const APP_ID: &'static str = "com.system76.CosmicFiles";
+    const APP_ID: &'static str = "dev.armyknifeFiles";
 
     fn core(&self) -> &Core {
         &self.core
@@ -2161,7 +2161,7 @@ impl Application for App {
         });
 
         let about = About::default()
-            .name(fl!("cosmic-files"))
+            .name(fl!("armyknife-files"))
             .icon(icon::from_name(Self::APP_ID))
             .version(env!("CARGO_PKG_VERSION"))
             .author("System76")
@@ -2683,7 +2683,7 @@ impl Application for App {
             }
             Message::CosmicSettings(arg) => {
                 //TODO: use special settings URL scheme instead?
-                let mut command = process::Command::new("cosmic-settings");
+                let mut command = process::Command::new("armyknife-settings");
                 command.arg(arg);
                 match spawn_detached(&mut command) {
                     Ok(()) => {}
@@ -2742,7 +2742,7 @@ impl Application for App {
                 {
                     // Use the dialog ID to make it float
                     settings.platform_specific.application_id =
-                        "com.system76.CosmicFilesDialog".to_string();
+                        "dev.armyknifeFilesDialog".to_string();
                 }
 
                 let (id, command) = window::open(settings);
@@ -2770,7 +2770,7 @@ impl Application for App {
                         {
                             // Use the dialog ID to make it float
                             settings.platform_specific.application_id =
-                                "com.system76.CosmicFilesDialog".to_string();
+                                "dev.armyknifeFilesDialog".to_string();
                         }
 
                         let (id, command) = window::open(settings);
@@ -2885,7 +2885,7 @@ impl Application for App {
                                             let _ = recently_used_xbel::update_recently_used(
                                                 &path,
                                                 Self::APP_ID.to_string(),
-                                                "cosmic-files".to_string(),
+                                                "armyknife-files".to_string(),
                                                 None,
                                             );
                                         }
@@ -3693,7 +3693,7 @@ impl Application for App {
                             {
                                 // Use the dialog ID to make it float
                                 settings.platform_specific.application_id =
-                                    "com.system76.CosmicFilesDialog".to_string();
+                                    "dev.armyknifeFilesDialog".to_string();
                             }
 
                             let (id, command) = window::open(settings);
@@ -4091,7 +4091,7 @@ impl Application for App {
                         },
                         tab::Command::OpenTrash => {
                             //TODO: use handler for x-scheme-handler/trash and open trash:///
-                            let mut command = process::Command::new("cosmic-files");
+                            let mut command = process::Command::new("armyknife-files");
                             command.arg("--trash");
                             match spawn_detached(&mut command) {
                                 Ok(()) => {}
@@ -4676,7 +4676,7 @@ impl Application for App {
                                 input_zone: None,
                                 anchor: Anchor::TOP | Anchor::BOTTOM | Anchor::LEFT | Anchor::RIGHT,
                                 output: IcedOutput::Output(output),
-                                namespace: "cosmic-files-applet".into(),
+                                namespace: "armyknife-files-applet".into(),
                                 size: Some((None, None)),
                                 margin: IcedMargin {
                                     top: 0,

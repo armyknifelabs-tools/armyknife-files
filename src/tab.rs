@@ -2076,7 +2076,7 @@ impl ItemThumbnail {
                 //TODO: apparmor config for evince-thumbnailer does not allow /tmp/cosmic-files*
                 "gnome-desktop-"
             } else {
-                "cosmic-files-"
+                "armyknife-files-"
             };
 
             // It's preferable to create the tempfile in the same directory as the final cached

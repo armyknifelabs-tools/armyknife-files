@@ -977,7 +977,7 @@ impl Application for App {
     type Message = Message;
 
     /// The unique application ID to supply to the window manager.
-    const APP_ID: &'static str = "com.system76.CosmicFilesDialog";
+    const APP_ID: &'static str = "dev.armyknifeFilesDialog";
 
     fn core(&self) -> &Core {
         &self.core
@@ -1606,7 +1606,7 @@ impl Application for App {
                                 let _ = update_recently_used(
                                     path,
                                     Self::APP_ID.to_string(),
-                                    "cosmic-files".to_string(),
+                                    "armyknife-files".to_string(),
                                     None,
                                 );
                             }

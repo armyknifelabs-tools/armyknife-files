@@ -401,7 +401,7 @@ impl MimeAppCache {
         // Look for and return preferred terminals
         //TODO: fallback order beyond cosmic-term?
 
-        let mut preference_order = vec!["com.system76.CosmicTerm".to_string()];
+        let mut preference_order = vec!["dev.armyknifeTerm".to_string()];
 
         if let Some(id) = self.get_default_terminal() {
             preference_order.insert(0, id);
